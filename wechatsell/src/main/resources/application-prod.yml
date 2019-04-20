@@ -1,0 +1,51 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://10.175.32.80:3306/sell?characterEncoding=utf-8&useSSL=false
+#
+#  jpa:
+#    show-sql: true
+  jackson:
+    # 属性为空的不参与序列化
+    default-property-inclusion: non_null
+  redis:
+    host: 10.175.32.80
+    port: 6379
+    password:
+server:
+  servlet:
+    context-path: /sell
+
+wechat:
+  #  wxd898fcb01713c658 商户appId
+  #  wxcc07e1c9b0d2102b 测试号appId
+  mpAppId: wxd898fcb01713c658
+  mpAppSecret: 91b6e0c4015ed4794c0998a6e0463ce0
+  #  开放平台的appId和appSecret
+  openAppId: wx6ad144e54af67d87
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  mchId: 1483469312
+  mchKey: C5245D70627C1F8E9964D494B0735025
+  keyPath: C:/Coding/h5.p12
+  notifyUrl: http://sunsell.natapp1.cc/sell/pay/notify
+  templateId:
+    orderStatus: e-Cqq67QxD6YNI41iRiqawEYdFavW_7pc7LyEMb-yeQ
+
+project-url:
+  wechatMpAuthorize: http://sunsell.natapp1.cc
+  wechatOpenAuthorize: http://sunsell.natapp1.cc
+  sell: http://sunsell.natapp1.cc
+#logging:
+#  pattern:
+#    console: "%d - %message%n"
+#  path: C:\Users\haiyu\Documents\log
+#  level: debug
+#  file: C:\Users\haiyu\Documents\log\sell.log
+logging:
+  level:
+    com.shy.wechatsell.mapper: trace
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
