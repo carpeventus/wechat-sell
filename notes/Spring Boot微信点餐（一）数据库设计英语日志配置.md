@@ -9,21 +9,21 @@
 
 **功能分析**
 
-![Snipaste_2018-10-14_09-38-55](http://obvjfxxhr.bkt.clouddn.com/Snipaste_2018-10-14_09-38-55.png)
+![](https://picmeup.oss-cn-hangzhou.aliyuncs.com/coding/Snipaste_2019-06-11_20-56-03.png)
 
 **角色关系图**
 
-![Snipaste_2018-10-14_09-39-39](http://obvjfxxhr.bkt.clouddn.com/Snipaste_2018-10-14_09-39-39.png)
+![](https://picmeup.oss-cn-hangzhou.aliyuncs.com/coding/Snipaste_2019-06-11_20-56-18.png)
 
 **部署架构**
 
 微信端和PC端都会发起数据请求，请求首先会到达Ngnix服务器，前端的代码已经写好了，直接使用即可；如果请求的是后端接口，会转发到Tomcat服务器（分布式，其实是多台服务器）。如果项目做了缓存，会使用到Redis，否则会查询MySQL数据库。
 
-![Snipaste_2018-10-14_09-45-10](http://obvjfxxhr.bkt.clouddn.com/Snipaste_2018-10-14_09-45-10.png)
+![](https://picmeup.oss-cn-hangzhou.aliyuncs.com/coding/Snipaste_2019-06-11_20-56-26.png)
 
 ### 数据库设计
 
-![Snipaste_2018-10-14_09-46-29](http://obvjfxxhr.bkt.clouddn.com/Snipaste_2018-10-14_09-46-29.png)
+![](https://picmeup.oss-cn-hangzhou.aliyuncs.com/coding/Snipaste_2019-06-11_20-56-35.png)
 
 一个类目下有多个商品，每个商品又归属于某一个类目，所有类目和商品属于一对多的关系。订单详情表包含了商品信息、和订单id，而订单表中包含了买家信息、订单状态、支付状态等信息，一个订单可以包含多个订单详情，或者说一个订单详情归属于某一个订单，因此订单和订单详情是一对多的关系。
 
